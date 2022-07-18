@@ -11,15 +11,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/chat/:channelId" element={<Chat />} />
-        <Route
-          path="/channels"
-          element={
-            <>
-              <ChannelCreate />
-              <ChannelList />
-            </>
-          }
-        />
+        <Route path="/channels" element={<ChannelCreate />} />
       </Routes>
     </BrowserRouter>
   );
