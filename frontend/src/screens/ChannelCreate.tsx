@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { ChannelList } from "./ChannelList";
 import { useChannelContext } from "../hooks/useChannelContext";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +17,7 @@ export const ChannelCreate = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full h-screen bg-zinc-900 flex items-center justify-center">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -26,16 +27,24 @@ export const ChannelCreate = () => {
           createChannel(channelName);
           setChannelName("");
         }}
+        className="form"
       >
-        <label>Nome do canal</label>
         <input
           type="text"
           name="channel-name"
           id="channel-name"
           value={channelName}
           onChange={(e) => setChannelName(e.target.value)}
+          placeholder="Nome do canal"
+          className="input"
         />
-        <button type="submit">Criar</button>
+        <div>
+          <p>Canais disponiveis:</p>
+          <ChannelList />
+        </div>
+        <button type="submit" className="button" disabled={!channelName}>
+          Criar
+        </button>
       </form>
     </div>
   );

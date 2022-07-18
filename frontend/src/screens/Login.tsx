@@ -17,7 +17,7 @@ export const Login = () => {
           login(userName);
           navigate("/channels");
         }}
-        className="w-80 h-96 bg-slate-50 px-4 py-6 rounded-md flex flex-col"
+        className="form"
       >
         <input
           type="text"
@@ -26,7 +26,7 @@ export const Login = () => {
           placeholder="Email"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          className="rounded-md p-2 focus:outline-none focus:border-zinc-900 focus:border mb-4"
+          className="input"
         />
         <input
           type="password"
@@ -35,11 +35,11 @@ export const Login = () => {
           placeholder="********"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="rounded-md p-2 focus:outline-none focus:border-zinc-900 focus:border"
+          className="input"
         />
         <button
           type="submit"
-          className="mt-auto w-full h-12 bg-zinc-700 rounded-md text-slate-50 disabled:cursor-not-allowed disabled:opacity-20"
+          className="button"
           disabled={!userName || !password}
         >
           Entrar
