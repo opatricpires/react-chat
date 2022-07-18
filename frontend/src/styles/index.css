@@ -40,5 +40,5 @@ input[type="number"] {
 }
 
 .list-item {
-  @apply w-full bg-slate-700 text-slate-50 p-1 mb-1 rounded-sm text-sm;
+  @apply w-full bg-zinc-700 text-slate-50 p-1 mb-1 rounded-sm text-sm;
 }

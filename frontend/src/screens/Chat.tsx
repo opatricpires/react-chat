@@ -35,18 +35,12 @@ export const Chat = () => {
   }, [channel?.messages]);
 
   return (
-    <div>
-      <div>
-        <h5># {channel?.name}</h5>
-        <Link to="/channels">Voltar</Link>
-      </div>
-
-      <div style={{ maxHeight: "300px", overflowY: "scroll" }} ref={divRef}>
-        {channel?.messages.map((message, index) => (
-          <div key={index}>
-            <strong>{message.userName}</strong>: {message.message}
-          </div>
-        ))}
+    <div className="w-full h-screen bg-zinc-900 flex flex-col justify-center items-center">
+      <div className="w-80 flex justify-between mb-4">
+        <h5 className="text-white"># {channel?.name}</h5>
+        <Link to="/channels" className="text-white text-xs">
+          Voltar
+        </Link>
       </div>
 
       <form
@@ -57,6 +51,7 @@ export const Chat = () => {
           createMessage(message);
           setMessage("");
         }}
+        className="form"
       >
         <input
           type="text"
@@ -65,8 +60,24 @@ export const Chat = () => {
           placeholder="Escreva sua mensagem"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          className="input"
         />
-        <button type="submit">Enviar</button>
+
+        <div
+          style={{ maxHeight: "300px", overflowY: "scroll" }}
+          ref={divRef}
+          className="w-full bg-white rounded-sm h-full mb-4"
+        >
+          {channel?.messages.map((message, index) => (
+            <div key={index} className="mb-1">
+              <strong>{message.userName}</strong>: {message.message}
+            </div>
+          ))}
+        </div>
+
+        <button type="submit" className="button" disabled={!message}>
+          Enviar
+        </button>
       </form>
     </div>
   );
