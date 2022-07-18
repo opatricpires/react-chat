@@ -1,3 +1,5 @@
+import "./styles/index.css";
+
 import App from "./App";
 import { ChannelContextProvider } from "./context/ChannelContext";
 import React from "react";
