@@ -7,7 +7,7 @@ export const ChannelList = () => {
   return (
     <ul>
       {channels.map((channel) => (
-        <li key={channel.id}>
+        <li key={channel.id} className="list-item">
           <Link to={`/chat/${channel.id}`}>{channel.name}</Link>
         </li>
       ))}

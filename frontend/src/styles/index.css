@@ -38,3 +38,7 @@ input[type="number"] {
 .button {
   @apply mt-auto w-full h-12 bg-zinc-700 rounded-md text-slate-50 disabled:cursor-not-allowed disabled:opacity-20;
 }
+
+.list-item {
+  @apply w-full bg-slate-700 text-slate-50 p-1 mb-1 rounded-sm text-sm;
+}
